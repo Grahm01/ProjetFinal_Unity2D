@@ -259,6 +259,7 @@ GameObject:
   m_Component:
   - component: {fileID: 705668214}
   - component: {fileID: 705668215}
+  - component: {fileID: 705668216}
   m_Layer: 0
   m_Name: GroundCheck
   m_TagString: Untagged
@@ -293,6 +294,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.237215, y: 0.35783815, z: 1}
   m_Center: {x: -0.0023255348, y: -0.15800166, z: 0}
+--- !u!114 &705668216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 705668213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d60e4f5ff9cee0469ddb8b088fa2aa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &817115222 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6685327473313937242, guid: 0d7544a921de1d6488b026c72cf2c394, type: 3}
@@ -455,11 +468,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6685327473313937246, guid: 0d7544a921de1d6488b026c72cf2c394, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.01
+      value: -3.85
       objectReference: {fileID: 0}
     - target: {fileID: 6685327473313937246, guid: 0d7544a921de1d6488b026c72cf2c394, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.153
+      value: -1.56
       objectReference: {fileID: 0}
     - target: {fileID: 6685327473313937246, guid: 0d7544a921de1d6488b026c72cf2c394, type: 3}
       propertyPath: m_LocalPosition.z
