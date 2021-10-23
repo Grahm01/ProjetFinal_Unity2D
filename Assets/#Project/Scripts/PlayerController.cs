@@ -9,7 +9,8 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 15f;
     public float jumpForce= 15f;
 
-    public bool isGrounded = false;
+    public bool isGrounded;
+    public bool canDoubleJump;
 
     //public Transform GroundCheck;
     //public Transform CeilingCheck;
@@ -44,7 +45,19 @@ public class PlayerController : MonoBehaviour
         move = playerControls.Player.Move.ReadValue<Vector2>();
         speed = moveSpeed * Time.deltaTime;
         Move();
-        Jump();
+
+        if (isGrounded == true) { 
+            Jump();
+            canDoubleJump = true;
+
+        }
+        else if (canDoubleJump && playerControls.Player.Jump.triggered)
+        {
+            Jump();
+            canDoubleJump = false;
+        }
+
+
 
 
     }
@@ -56,13 +69,19 @@ public class PlayerController : MonoBehaviour
 
     void Jump()
     {
-        if (playerControls.Player.Jump.triggered && isGrounded == true)
+        if (playerControls.Player.Jump.triggered)
         {
+
             //jump = playerControls.Player.Jump.ReadValue<float>();
             gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
             Debug.Log("jumpee!");
+
+
+
         }
-        
+
+
+
     }
 
     void Move()
