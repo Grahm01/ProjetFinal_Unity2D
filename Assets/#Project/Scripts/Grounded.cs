@@ -18,7 +18,7 @@ public class Grounded : MonoBehaviour
         if (collision.collider.tag == "Ground")
         {
             Player.GetComponent<PlayerController>().isGrounded = true;
-            Debug.Log("OnDaGround");
+            //Debug.Log("OnDaGround");
         }
 
     }
@@ -28,7 +28,7 @@ public class Grounded : MonoBehaviour
         if (collision.collider.tag == "Ground")
         {
             Player.GetComponent<PlayerController>().isGrounded = false;
-            Debug.Log("Nope, I'm not OnDaGround");
+            //Debug.Log("Nope, I'm not OnDaGround");
         }
 
     }
