@@ -49,12 +49,14 @@ public class PlayerController : MonoBehaviour
         if (isGrounded == true) { 
             Jump();
             canDoubleJump = true;
+            //Debug.Log(speed);
 
         }
         else if (canDoubleJump && playerControls.Player.Jump.triggered)
         {
             Jump();
             canDoubleJump = false;
+            Debug.Log(speed);
         }
 
 
