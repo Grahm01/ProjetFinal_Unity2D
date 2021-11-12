@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
         {
             Jump();
             canDoubleJump = false;
-            Debug.Log(speed);
+            //Debug.Log(speed);
         }
 
 
@@ -76,7 +76,7 @@ public class PlayerController : MonoBehaviour
 
             //jump = playerControls.Player.Jump.ReadValue<float>();
             gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
-            Debug.Log("jumpee!");
+            //Debug.Log("jumpee!");
 
 
 
