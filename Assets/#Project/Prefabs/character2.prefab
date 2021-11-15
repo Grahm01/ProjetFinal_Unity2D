@@ -79,10 +79,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: -1512530651896494351}
-  - component: {fileID: 8445237683050989543}
   - component: {fileID: 9139517449928494273}
-  - component: {fileID: 7220698921725767799}
   - component: {fileID: 6750692653353567875}
+  - component: {fileID: 8445237683050989543}
+  - component: {fileID: 8209233040333291696}
+  - component: {fileID: 7220698921725767799}
   - component: {fileID: 6492045989482820434}
   - component: {fileID: 8912114785062125125}
   - component: {fileID: 5106731039197879835}
@@ -108,6 +109,60 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9139517449928494273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5059221453221848765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91026ebdae88a614dbea0f36c6fb8b49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 10
+  jumpForce: 8
+  isGrounded: 1
+  canDoubleJump: 0
+--- !u!114 &6750692653353567875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5059221453221848765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7afde56c6d45e9944b97ede8e53fd2b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 8445237683050989543}
+  spriteArray:
+  - {fileID: 21300000, guid: e29c299305f22924994d8472f2dc75bb, type: 3}
+  - {fileID: 21300000, guid: e671ed360c5bc824190e86899bb56280, type: 3}
+  - {fileID: 21300000, guid: e0c09af7a3a29d94c8fd65e063522930, type: 3}
+  - {fileID: 21300000, guid: bde3f3b01b56bcb478b602dff4fa0820, type: 3}
+  - {fileID: 21300000, guid: e026ae82f8522e7419414b91ab0cf73b, type: 3}
+  - {fileID: 21300000, guid: 977c69bfd875f16459677272bdacc9c3, type: 3}
+  - {fileID: 21300000, guid: 9b8173ac13a405141bb8624ee8b2e323, type: 3}
+  colorState: 0
+  alreadyChange: 0
+  whenEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8702417099620831824, guid: aacd990b724bb054b8c73649e6356e4e, type: 3}
+        m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
+        m_MethodName: Load
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!212 &8445237683050989543
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -160,7 +215,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &9139517449928494273
+--- !u!114 &8209233040333291696
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -169,13 +224,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 5059221453221848765}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91026ebdae88a614dbea0f36c6fb8b49, type: 3}
+  m_Script: {fileID: 11500000, guid: 9cad5a803c1bdc248b6e89324c986a68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
-  jumpForce: 8
-  isGrounded: 1
-  canDoubleJump: 0
 --- !u!50 &7220698921725767799
 Rigidbody2D:
   serializedVersion: 4
@@ -197,29 +248,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &6750692653353567875
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5059221453221848765}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7afde56c6d45e9944b97ede8e53fd2b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 8445237683050989543}
-  spriteArray:
-  - {fileID: 21300000, guid: e29c299305f22924994d8472f2dc75bb, type: 3}
-  - {fileID: 21300000, guid: e671ed360c5bc824190e86899bb56280, type: 3}
-  - {fileID: 21300000, guid: e0c09af7a3a29d94c8fd65e063522930, type: 3}
-  - {fileID: 21300000, guid: bde3f3b01b56bcb478b602dff4fa0820, type: 3}
-  - {fileID: 21300000, guid: e026ae82f8522e7419414b91ab0cf73b, type: 3}
-  - {fileID: 21300000, guid: 977c69bfd875f16459677272bdacc9c3, type: 3}
-  - {fileID: 21300000, guid: 9b8173ac13a405141bb8624ee8b2e323, type: 3}
-  colorState: 0
-  alreadyChange: 0
 --- !u!61 &6492045989482820434
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -270,3 +298,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a80262eeb6cf87d44bec0e38563f3db2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  camPrefab: {fileID: 6090333066487032136, guid: be5efbaaff598e4498473f92d69db898, type: 3}

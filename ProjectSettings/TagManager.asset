@@ -11,6 +11,9 @@ TagManager:
   - Orange
   - Green
   - Purple
+  - RedPortal
+  - BluePortal
+  - YellowPortal
   layers:
   - Default
   - TransparentFX

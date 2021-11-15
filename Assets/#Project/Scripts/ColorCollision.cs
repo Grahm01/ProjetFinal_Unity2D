@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 public class ColorCollision : MonoBehaviour
 {
@@ -10,6 +12,8 @@ public class ColorCollision : MonoBehaviour
     public ColorStatus colorState = ColorStatus.gray;
 
     public bool alreadyChange = false;
+
+    public UnityEvent whenEnter;
 
     protected void OnTriggerEnter2D(Collider2D collision)
     {
@@ -29,14 +33,14 @@ public class ColorCollision : MonoBehaviour
                 {
                     colorState = ColorStatus.purple;
                    
-                    Debug.Log("red + blue true");
+                    //Debug.Log("red + blue true");
 
                 }
                 else if (colorState == ColorStatus.yellow)
                 {
                     colorState = ColorStatus.green;
                    
-                    Debug.Log("yellow + blue true");
+                    //Debug.Log("yellow + blue true");
                 }
                 else
                 {
@@ -51,20 +55,20 @@ public class ColorCollision : MonoBehaviour
                 {
                     colorState = ColorStatus.red;
                     
-                    Debug.Log("red true");
+                    //Debug.Log("red true");
                 }
                 else if (colorState == ColorStatus.blue)
                 {
                     colorState = ColorStatus.purple;
                     
-                    Debug.Log("blue + red true");
+                    //Debug.Log("blue + red true");
 
                 }
                 else if (colorState == ColorStatus.yellow)
                 {
                     colorState = ColorStatus.orange;
                     
-                    Debug.Log("yellow + red true");
+                    //Debug.Log("yellow + red true");
                 }
                 else
                 {
@@ -84,14 +88,14 @@ public class ColorCollision : MonoBehaviour
                 {
                     colorState = ColorStatus.green;
                     
-                    Debug.Log("blue + yellow true");
+                    //Debug.Log("blue + yellow true");
 
                 }
                 else if (colorState == ColorStatus.red)
                 {
                     colorState = ColorStatus.orange;
                     
-                    Debug.Log("red + yellow true");
+                    //Debug.Log("red + yellow true");
                 }
                 else
                 {
@@ -105,7 +109,9 @@ public class ColorCollision : MonoBehaviour
                 {
                     if (colorState == ColorStatus.green)
                     {
-                        Debug.Log("NICE");
+                        Debug.Log("NICE Green");
+                        whenEnter?.Invoke();
+                        colorState = ColorStatus.gray;
 
                     }
                     else
@@ -119,7 +125,9 @@ public class ColorCollision : MonoBehaviour
                 {
                     if (colorState == ColorStatus.orange)
                     {
-                        Debug.Log("NICE");
+                        Debug.Log("NICE Orange");
+                        whenEnter?.Invoke();
+                        colorState = ColorStatus.gray;
 
                     }
                     else
@@ -133,7 +141,9 @@ public class ColorCollision : MonoBehaviour
                 {
                     if (colorState == ColorStatus.purple)
                     {
-                        Debug.Log("NICE");
+                        Debug.Log("NICE Purple");
+                        whenEnter?.Invoke();
+                        colorState = ColorStatus.gray;
 
                     }
                     else
@@ -143,9 +153,60 @@ public class ColorCollision : MonoBehaviour
 
                 }
                 break;
-        }
+
+            case "BluePortal":
+                {
+                    if (colorState == ColorStatus.blue)
+                    {
+                        Debug.Log("NICE Blue Portal!");
+                        whenEnter?.Invoke();
+                        colorState = ColorStatus.gray;
+
+                    }
+                    else
+                    {
+                        Debug.Log("Wrong color");
+                    }
+
+                }
+                break;
+            case "RedPortal":
+                {
+                    if (colorState == ColorStatus.red)
+                    {
+                        Debug.Log("NICE Red Portal!");
+                        whenEnter?.Invoke();
+                        colorState = ColorStatus.gray;
+
+                    }
+                    else
+                    {
+                        Debug.Log("Wrong color");
+                    }
+
+                }
+                break;
+            case "YellowPortal":
+                {
+                    if (colorState == ColorStatus.yellow)
+                    {
+                        Debug.Log("NICE Yellow Portal!");
+                        whenEnter?.Invoke();
+                        colorState = ColorStatus.gray;
+
+                    }
+                    else
+                    {
+                        Debug.Log("Wrong color");
+                    }
+
+                }
+                Destroy(collision.gameObject);
+                break;
                 
-                alreadyChange = true;
+        }
+
+        alreadyChange = true;
                 spriteRenderer.sprite = spriteArray[(int)colorState];
     }
 

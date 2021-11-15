@@ -10,6 +10,7 @@ public class PlayerStartPosition : MonoBehaviour
         
         GameObject player = LevelsManager.instance.player;
         player.transform.position = transform.position;
+        
 
 
     }

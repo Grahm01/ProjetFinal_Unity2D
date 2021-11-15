@@ -16,9 +16,29 @@ public class WrapAround : MonoBehaviour
     private SpriteRenderer rend;
     private Camera cam;
 
+    public static WrapAround instance = null;
+    public Camera camPrefab;
+
+
     //
     // Initialisation
     //
+    void Start()
+    {
+        if (instance == null)
+        {
+            DontDestroyOnLoad(gameObject);
+            instance = this; //instance == moi
+            cam = Instantiate(camPrefab);
+            DontDestroyOnLoad(cam);
+
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
+    }
     private void Awake()
     {
         rend = GetComponent<SpriteRenderer>();

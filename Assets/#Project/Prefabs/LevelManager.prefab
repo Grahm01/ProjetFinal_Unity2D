@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6821418532249093416}
   - component: {fileID: 6821418532249093415}
-  - component: {fileID: 9198648473912747873}
+  - component: {fileID: 8702417099620831824}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 5059221453221848765, guid: e32d550b0c7dcc4448d4fc95e91993d6, type: 3}
   player: {fileID: 0}
---- !u!114 &9198648473912747873
+--- !u!114 &8702417099620831824
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

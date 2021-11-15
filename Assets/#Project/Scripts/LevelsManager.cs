@@ -8,6 +8,7 @@ public class LevelsManager : MonoBehaviour
     public static LevelsManager instance = null;
     public GameObject playerPrefab;
     public GameObject player;
+
     void Start()
     {
         if (instance == null)
@@ -16,7 +17,9 @@ public class LevelsManager : MonoBehaviour
             instance = this; //instance == moi
             player = Instantiate(playerPrefab);
             DontDestroyOnLoad(player);
+
         }
+
         else
         {
             Destroy(gameObject);
