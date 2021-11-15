@@ -201,8 +201,9 @@ public class ColorCollision : MonoBehaviour
                     }
 
                 }
-                Destroy(collision.gameObject);
                 break;
+                
+                
                 
         }
 
