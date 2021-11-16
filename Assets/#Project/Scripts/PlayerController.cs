@@ -5,12 +5,14 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    private PlayerControls playerControls;
+    protected PlayerControls playerControls;
     public float moveSpeed = 15f;
     public float jumpForce= 15f;
 
     public bool isGrounded;
     public bool canDoubleJump;
+
+    
 
     //public Transform GroundCheck;
     //public Transform CeilingCheck;
@@ -58,6 +60,8 @@ public class PlayerController : MonoBehaviour
             canDoubleJump = false;
             //Debug.Log(speed);
         }
+
+
 
 
 

@@ -44,6 +44,24 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""CheatSheet"",
+                    ""type"": ""Button"",
+                    ""id"": ""dba85386-cae7-4768-9604-ec59d4af847c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MenuPopUp"",
+                    ""type"": ""Button"",
+                    ""id"": ""3a4705a1-9eb2-4c11-92ad-7d060b2b3ba4"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -121,6 +139,28 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a2a1821a-0220-45a3-8114-2741f8e53073"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CheatSheet"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9a595cf9-d109-4e11-876c-8c120a94a638"",
+                    ""path"": ""<Keyboard>/m"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MenuPopUp"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -710,6 +750,8 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
+        m_Player_CheatSheet = m_Player.FindAction("CheatSheet", throwIfNotFound: true);
+        m_Player_MenuPopUp = m_Player.FindAction("MenuPopUp", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -783,12 +825,16 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private IPlayerActions m_PlayerActionsCallbackInterface;
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_Jump;
+    private readonly InputAction m_Player_CheatSheet;
+    private readonly InputAction m_Player_MenuPopUp;
     public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
         public PlayerActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
+        public InputAction @CheatSheet => m_Wrapper.m_Player_CheatSheet;
+        public InputAction @MenuPopUp => m_Wrapper.m_Player_MenuPopUp;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -804,6 +850,12 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Jump.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
                 @Jump.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
                 @Jump.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
+                @CheatSheet.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCheatSheet;
+                @CheatSheet.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCheatSheet;
+                @CheatSheet.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCheatSheet;
+                @MenuPopUp.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMenuPopUp;
+                @MenuPopUp.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMenuPopUp;
+                @MenuPopUp.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMenuPopUp;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -814,6 +866,12 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Jump.started += instance.OnJump;
                 @Jump.performed += instance.OnJump;
                 @Jump.canceled += instance.OnJump;
+                @CheatSheet.started += instance.OnCheatSheet;
+                @CheatSheet.performed += instance.OnCheatSheet;
+                @CheatSheet.canceled += instance.OnCheatSheet;
+                @MenuPopUp.started += instance.OnMenuPopUp;
+                @MenuPopUp.performed += instance.OnMenuPopUp;
+                @MenuPopUp.canceled += instance.OnMenuPopUp;
             }
         }
     }
@@ -972,6 +1030,8 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     {
         void OnMove(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
+        void OnCheatSheet(InputAction.CallbackContext context);
+        void OnMenuPopUp(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

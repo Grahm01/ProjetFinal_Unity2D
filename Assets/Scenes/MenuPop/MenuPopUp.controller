@@ -132,7 +132,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PopUpBox
+  m_Name: MenuPopUp
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: close
