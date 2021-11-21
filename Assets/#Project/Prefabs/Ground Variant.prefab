@@ -17,7 +17,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7394535624398633124, guid: 2d13c921e7bdba04f951d3e72f145394, type: 3}
       propertyPath: m_Name
-      value: Ground
+      value: Ground Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 7394535624398633124, guid: 2d13c921e7bdba04f951d3e72f145394, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7394535624398633124, guid: 2d13c921e7bdba04f951d3e72f145394, type: 3}
       propertyPath: m_TagString

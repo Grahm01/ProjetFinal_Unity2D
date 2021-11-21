@@ -9,11 +9,26 @@ public class ColorCollision : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public Sprite[] spriteArray;
     public enum ColorStatus {gray=0,blue =1, red=2,  yellow=3, purple=4, orange=5, green=6}
-    public ColorStatus colorState = ColorStatus.gray;
+    public ColorStatus colorState;
 
     public bool alreadyChange = false;
 
     public UnityEvent whenEnter;
+
+    public bool blue;
+    public bool red;
+    public bool yellow;
+
+    private void Start()
+    {
+        colorState = ColorStatus.gray;
+
+
+    }
+    private void Update()
+    {
+        
+    }
 
     protected void OnTriggerEnter2D(Collider2D collision)
     {
@@ -24,9 +39,12 @@ public class ColorCollision : MonoBehaviour
 
             case "Blue":
 
-                if (colorState==ColorStatus.orange || colorState == ColorStatus.green || colorState == ColorStatus.purple)
+                if (colorState==ColorStatus.orange || colorState == ColorStatus.green || colorState == ColorStatus.purple || colorState == ColorStatus.gray)
                 {
                     colorState = ColorStatus.blue;
+                    blue = true;
+                    //ColorChange.Balloon.sprite = balloonSpriteArray[1];
+                    Debug.Log("Blue tru");
   
                 }
                 else if (colorState== ColorStatus.red)
@@ -51,9 +69,10 @@ public class ColorCollision : MonoBehaviour
                 break;
 
             case "Red":
-                if (colorState == ColorStatus.orange || colorState == ColorStatus.green || colorState == ColorStatus.purple)
+                if (colorState == ColorStatus.orange || colorState == ColorStatus.green || colorState == ColorStatus.purple || colorState == ColorStatus.gray)
                 {
                     colorState = ColorStatus.red;
+                    red = true;
                     
                     //Debug.Log("red true");
                 }
@@ -79,9 +98,10 @@ public class ColorCollision : MonoBehaviour
                 break;
 
             case "Yellow":
-                if (colorState == ColorStatus.orange || colorState == ColorStatus.green || colorState == ColorStatus.purple)
+                if (colorState == ColorStatus.orange || colorState == ColorStatus.green || colorState == ColorStatus.purple || colorState == ColorStatus.gray)
                 {
                     colorState = ColorStatus.yellow;
+                    yellow = true;
                     
                 }
                 else if (colorState == ColorStatus.blue)
