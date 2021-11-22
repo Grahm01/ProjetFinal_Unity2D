@@ -12,16 +12,26 @@ public class PlayerController : MonoBehaviour
     public bool isGrounded;
     public bool canDoubleJump;
 
-    
+    //private Rigidbody2D theRB;
+
+    private SpriteRenderer spriteRenderer;
+    public bool flipX;
+
 
     //public Transform GroundCheck;
     //public Transform CeilingCheck;
+    [Tooltip("Monster speed")]
+    public Vector2 speed2 = Vector2.zero;
 
 
     private float speed;
     private Vector3 move;
 
-
+    private void Start()
+    {
+        //theRB = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
 
 
     private void Awake()
@@ -61,6 +71,17 @@ public class PlayerController : MonoBehaviour
             //Debug.Log(speed);
         }
 
+        //if (speed2.x < 0)
+        //{
+        //    spriteRenderer.flipX = true;
+
+        //}
+        //else
+        //{
+        //    spriteRenderer.flipX = false;
+
+        //}
+
 
 
 
@@ -95,6 +116,9 @@ public class PlayerController : MonoBehaviour
         if (playerControls.Player.Move.enabled)
         {
             transform.position += move * speed;
+
+
+
         }
 
     }
