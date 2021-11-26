@@ -40,7 +40,7 @@ public class ColorChange : MonoBehaviour
                     colorState = ColorStatus.blue;
 
                     //ColorChange.Balloon.sprite = balloonSpriteArray[1];
-                    Debug.Log("Blue tru");
+                    //Debug.Log("Blue tru");
 
                 }
                 else if (colorState == ColorStatus.red)

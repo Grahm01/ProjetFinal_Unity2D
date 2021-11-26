@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 6821418532249093416}
   - component: {fileID: 6821418532249093415}
   - component: {fileID: 8702417099620831824}
-  - component: {fileID: 392691790}
-  - component: {fileID: 392691794}
+  - component: {fileID: 9180430997784826607}
+  - component: {fileID: -4623275628900896438}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: LevelManager
@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cad5a803c1bdc248b6e89324c986a68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &392691790
+--- !u!114 &9180430997784826607
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -74,8 +74,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   popUpBox: {fileID: 0}
   animator: {fileID: 0}
-  popUpText: {fileID: 0}
---- !u!114 &392691794
+--- !u!114 &-4623275628900896438
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

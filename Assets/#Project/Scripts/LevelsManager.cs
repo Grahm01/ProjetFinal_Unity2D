@@ -9,6 +9,10 @@ public class LevelsManager : MonoBehaviour
     public GameObject playerPrefab;
     public GameObject player;
 
+    
+    public GameObject cheatSheet;
+
+
     void Start()
     {
         if (instance == null)
@@ -17,6 +21,12 @@ public class LevelsManager : MonoBehaviour
             instance = this; //instance == moi
             player = Instantiate(playerPrefab);
             DontDestroyOnLoad(player);
+
+            
+            DontDestroyOnLoad(cheatSheet);
+
+            //popUp = Instantiate(popUpPrefab);
+            //DontDestroyOnLoad(popUp);
 
         }
 
