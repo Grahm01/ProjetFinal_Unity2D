@@ -38,7 +38,7 @@ public class HareFlip : PlayerController
         {
             return;
         }
-        Debug.Log(gameObject.name, gameObject);
+        //Debug.Log(gameObject.name, gameObject);
         transform.localScale = new Vector3(-0.1f, 0.1f, 1f);
         playerSprite.sprite = spriteArray[1];
     }

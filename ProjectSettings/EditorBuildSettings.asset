@@ -5,16 +5,25 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TutoColors.unity
     guid: 0524c16e89f16424596da1994d313d42
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: a04b66a4b3f75674ab568d9b27450d7d
   - enabled: 1
     path: Assets/Scenes/Tuto1.unity
     guid: 04ddc1ae72005334c8fda687c2e50c62
   - enabled: 1
     path: Assets/Scenes/Tuto2.unity
     guid: 9fe00328a4dcd4641bf522b0151e9c03
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/GameScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Game_Level_1.unity
+    guid: d5d8dd3f250464e4a9f3660b08e2a74b
+  - enabled: 1
+    path: Assets/Scenes/EndMenu.unity
+    guid: 824cdff6ce93a1b448402d8a733af994
   m_configObjects: {}
