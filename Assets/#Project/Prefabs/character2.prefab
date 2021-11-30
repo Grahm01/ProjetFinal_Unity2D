@@ -221,12 +221,12 @@ MonoBehaviour:
   spriteRenderer: {fileID: 5021481340159356032}
   spriteArray:
   - {fileID: 0}
-  - {fileID: 21300000, guid: a69ef72e59f6ac34c9e7a39bf59d1b04, type: 3}
-  - {fileID: 21300000, guid: b56cc59b97e056945a32273f6d524cae, type: 3}
-  - {fileID: 21300000, guid: a1129f0f0a43cf745a8056518cc07c56, type: 3}
-  - {fileID: 21300000, guid: e56ef766f1eccaf4ebac18eb0ad11843, type: 3}
-  - {fileID: 21300000, guid: 2b1422a07d5b85e46a9bb50a31a5b4e6, type: 3}
-  - {fileID: 21300000, guid: 5caddd527d8537842b0ef8306fe260e6, type: 3}
+  - {fileID: 21300000, guid: e3b01509c1be08741b2b1ad4adcbeef0, type: 3}
+  - {fileID: 21300000, guid: 41d07ca1f5a7f104ba65b08bd4876f03, type: 3}
+  - {fileID: 21300000, guid: 8d654247b93017a49a135cfc130cfb83, type: 3}
+  - {fileID: 21300000, guid: 564d09df07eb9734cbf318ccebec078d, type: 3}
+  - {fileID: 21300000, guid: 09ce200a201215a4092157f93b6c30eb, type: 3}
+  - {fileID: 21300000, guid: 1c70bc24e299c4f4ea43362112c2f801, type: 3}
   colorState: 0
   alreadyChange: 0
   whenEnter:
