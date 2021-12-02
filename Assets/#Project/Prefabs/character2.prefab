@@ -241,9 +241,25 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Tuto2
           m_BoolArgument: 0
         m_CallState: 2
+  whenEnterRestart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8702417099620831824, guid: aacd990b724bb054b8c73649e6356e4e, type: 3}
+        m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
+        m_MethodName: reLoad
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Tuto2
+          m_BoolArgument: 0
+        m_CallState: 2
+  restartAnimator: {fileID: 0}
 --- !u!95 &4589042100362586194
 Animator:
   serializedVersion: 3
@@ -254,7 +270,7 @@ Animator:
   m_GameObject: {fileID: 3118299444954761616}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5795c31b1e9f9e3498ea112396d36d54, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

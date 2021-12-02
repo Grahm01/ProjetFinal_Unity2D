@@ -15,6 +15,7 @@ TagManager:
   - BluePortal
   - YellowPortal
   - LevelManager
+  - Restart
   layers:
   - Default
   - TransparentFX

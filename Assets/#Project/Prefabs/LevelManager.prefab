@@ -49,6 +49,7 @@ MonoBehaviour:
   playerPrefab: {fileID: 5059221453221848765, guid: e32d550b0c7dcc4448d4fc95e91993d6, type: 3}
   player: {fileID: 0}
   cheatSheet: {fileID: 0}
+  restart: {fileID: 0}
 --- !u!114 &8702417099620831824
 MonoBehaviour:
   m_ObjectHideFlags: 0
