@@ -11,6 +11,7 @@ public class LevelsManager : MonoBehaviour
 
     
     public GameObject cheatSheet;
+    public GameObject restart;
 
 
     void Start()
@@ -24,9 +25,7 @@ public class LevelsManager : MonoBehaviour
 
             
             DontDestroyOnLoad(cheatSheet);
-
-            //popUp = Instantiate(popUpPrefab);
-            //DontDestroyOnLoad(popUp);
+            DontDestroyOnLoad(restart);
 
         }
 
