@@ -14,7 +14,7 @@ public class StartGame : MonoBehaviour
 
         if (collision.CompareTag("Player"))
         {
-            Debug.Log("Tuto!");
+            //Debug.Log("Tuto!");
             whenEnter?.Invoke();
 
         }

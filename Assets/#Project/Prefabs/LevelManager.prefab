@@ -49,7 +49,7 @@ MonoBehaviour:
   playerPrefab: {fileID: 5059221453221848765, guid: e32d550b0c7dcc4448d4fc95e91993d6, type: 3}
   player: {fileID: 0}
   cheatSheet: {fileID: 0}
-  restart: {fileID: 0}
+  restart: {fileID: 3604043925864595695, guid: 8a3bfdb7930b5104f81f167eda295b3e, type: 3}
 --- !u!114 &8702417099620831824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88,8 +88,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32d853da9ab4ad848a8bd7cccca29f74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 15
-  jumpForce: 15
-  isGrounded: 0
-  canDoubleJump: 0
   popUp: 

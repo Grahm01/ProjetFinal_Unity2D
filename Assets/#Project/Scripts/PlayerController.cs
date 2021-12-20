@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         //playerSprite = GetComponent<SpriteRenderer>();
+
     }
 
 
@@ -62,31 +64,25 @@ public class PlayerController : MonoBehaviour
             canDoubleJump = false;
         }
 
-
-
-
-
-
-
+        if (playerControls.Player.Quit.triggered)
+        {
+            Application.Quit();
+            Debug.Log("ESC byebye");
+        }
     }
 
 
-   
+
+
 
     void Jump()
     {
         if (playerControls.Player.Jump.triggered)
         {
 
-            //jump = playerControls.Player.Jump.ReadValue<float>();
             gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
-            //Debug.Log("jumpee!");
-
-
 
         }
-
-
 
     }
 
@@ -103,6 +99,4 @@ public class PlayerController : MonoBehaviour
     }
 
 
-
-    
 }

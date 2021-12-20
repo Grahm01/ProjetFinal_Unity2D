@@ -21,6 +21,7 @@ public class LevelsManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
             instance = this; //instance == moi
             player = Instantiate(playerPrefab);
+            restart = Instantiate(restart);
             DontDestroyOnLoad(player);
 
             
@@ -34,12 +35,5 @@ public class LevelsManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-        
     }
 }

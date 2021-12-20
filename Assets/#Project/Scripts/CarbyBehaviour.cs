@@ -8,13 +8,5 @@ using UnityEngine;
 
 public class CarbyBehaviour : MonoBehaviour
 {
-    void Start()
-    {
-        
-    }
 
-    void Update()
-    {
-        
-    }
 }

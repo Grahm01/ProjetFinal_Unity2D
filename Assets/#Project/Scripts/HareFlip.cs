@@ -4,53 +4,71 @@ using UnityEngine;
 
 public class HareFlip : PlayerController
 {
-    public SpriteRenderer playerSprite;
-    public Sprite[] spriteArray;
+    private SpriteRenderer playerSprite;
+    //public Sprite[] spriteArray;
+    //public Sprite LeftSprite;
+    //public Sprite RightSprite;
+
+    private Animator animator;
+
     void Start()
     {
+        playerSprite = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
 
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+
+
+
         if (move.x > 0)
-        {
-            //Debug.Log("Going Right");
-            unFlip();
-
-
+        {           
+            
+            if (animator != null)
+            {
+                animator.SetBool("right", true);
+                animator.SetBool("left", false);
+                unFlip();
+            }
 
         }
         if (move.x < 0)
         {
-            //Debug.Log("Going Left");
-            Flip();
-
-
+            
+            
+            if (animator != null)
+            {
+                animator.SetBool("right", false);
+                animator.SetBool("left", true);               
+                Flip();
+            }
         }
-
+        if (move.x == 0)
+        {
+            if (animator != null)
+            {
+                //Debug.Log("stopped");
+                animator.SetBool("right", false);
+                animator.SetBool("left", false);
+            }
+        }
     }
 
     private void Flip()
     {
-        if (spriteArray == null || spriteArray.Length < 2)
-        {
-            return;
-        }
-        //Debug.Log(gameObject.name, gameObject);
-        transform.localScale = new Vector3(-0.1f, 0.1f, 1f);
-        playerSprite.sprite = spriteArray[1];
+        transform.localScale = new Vector3(-0.032f, 0.032f, 1f);
+        //playerSprite.sprite = LeftSprite;
+
     }
 
     private void unFlip()
     {
-        if (spriteArray == null || spriteArray.Length < 2)
-        {
-            return;
-        }
-        transform.localScale = new Vector3(0.1f, 0.1f, 1f);
-        playerSprite.sprite = spriteArray[0];
+        transform.localScale = new Vector3(0.032f, 0.032f, 1f);
+        //playerSprite.sprite = RightSprite;
+
 
     }
 }

@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 
 public class SceneChanger : MonoBehaviour
 {
-    void Update()
-    {
-    }
+
+    protected PlayerControls playerControls;
 
     public void Load()
     {
@@ -24,6 +24,8 @@ public class SceneChanger : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
+
+
     public void Change(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
@@ -35,5 +37,6 @@ public class SceneChanger : MonoBehaviour
     {
         Application.Quit();
     }
+
 
 }

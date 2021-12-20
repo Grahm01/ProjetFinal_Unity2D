@@ -16,6 +16,10 @@ TagManager:
   - YellowPortal
   - LevelManager
   - Restart
+  - PurplePortal
+  - OrangePortal
+  - GreenPortal
+  - restart
   layers:
   - Default
   - TransparentFX

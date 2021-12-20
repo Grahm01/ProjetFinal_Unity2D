@@ -4,13 +4,31 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 
-public class CheatSheetPop : PlayerController
+public class CheatSheetPop : MonoBehaviour
 {
 
     //private PlayerControls playerControls;
     public string popUp;
     private bool popUpOpen = false;
 
+    protected PlayerControls playerControls;
+
+    private void Awake()
+    {
+        playerControls = new PlayerControls();
+
+    }
+
+    private void OnEnable()
+    {
+        playerControls.Enable();
+
+    }
+    private void OnDisable()
+    {
+        playerControls.Disable();
+
+    }
 
     void Start()
     {

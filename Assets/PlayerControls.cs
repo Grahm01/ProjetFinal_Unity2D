@@ -62,6 +62,24 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Quit"",
+                    ""type"": ""Button"",
+                    ""id"": ""ab8baa42-8205-46a1-84e3-83ea3d8f0904"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Restart"",
+                    ""type"": ""Button"",
+                    ""id"": ""7777cd52-dca1-449f-b1c9-06c5931f1a3e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -161,6 +179,28 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""MenuPopUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6228574c-68aa-431c-acf6-06bfc7f59af3"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Quit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ca6b52c9-b4c0-4b5b-8fcd-6e07bceb2509"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Restart"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -752,6 +792,8 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
         m_Player_CheatSheet = m_Player.FindAction("CheatSheet", throwIfNotFound: true);
         m_Player_MenuPopUp = m_Player.FindAction("MenuPopUp", throwIfNotFound: true);
+        m_Player_Quit = m_Player.FindAction("Quit", throwIfNotFound: true);
+        m_Player_Restart = m_Player.FindAction("Restart", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -827,6 +869,8 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Jump;
     private readonly InputAction m_Player_CheatSheet;
     private readonly InputAction m_Player_MenuPopUp;
+    private readonly InputAction m_Player_Quit;
+    private readonly InputAction m_Player_Restart;
     public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
@@ -835,6 +879,8 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
         public InputAction @CheatSheet => m_Wrapper.m_Player_CheatSheet;
         public InputAction @MenuPopUp => m_Wrapper.m_Player_MenuPopUp;
+        public InputAction @Quit => m_Wrapper.m_Player_Quit;
+        public InputAction @Restart => m_Wrapper.m_Player_Restart;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -856,6 +902,12 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @MenuPopUp.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMenuPopUp;
                 @MenuPopUp.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMenuPopUp;
                 @MenuPopUp.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMenuPopUp;
+                @Quit.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnQuit;
+                @Quit.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnQuit;
+                @Quit.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnQuit;
+                @Restart.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRestart;
+                @Restart.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRestart;
+                @Restart.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRestart;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -872,6 +924,12 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @MenuPopUp.started += instance.OnMenuPopUp;
                 @MenuPopUp.performed += instance.OnMenuPopUp;
                 @MenuPopUp.canceled += instance.OnMenuPopUp;
+                @Quit.started += instance.OnQuit;
+                @Quit.performed += instance.OnQuit;
+                @Quit.canceled += instance.OnQuit;
+                @Restart.started += instance.OnRestart;
+                @Restart.performed += instance.OnRestart;
+                @Restart.canceled += instance.OnRestart;
             }
         }
     }
@@ -1032,6 +1090,8 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnCheatSheet(InputAction.CallbackContext context);
         void OnMenuPopUp(InputAction.CallbackContext context);
+        void OnQuit(InputAction.CallbackContext context);
+        void OnRestart(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

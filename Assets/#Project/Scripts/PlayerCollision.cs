@@ -13,7 +13,7 @@ public class PlayerCollision : MonoBehaviour
     {
         colorChangeScript.ChangeColor(other.tag);
 
-        if (other.tag == "Blue" || other.tag == "Red" || other.tag == "Yellow")
+        if (other.tag == "Blue" || other.tag == "Red" || other.tag == "Yellow" || other.tag == "Purple" || other.tag == "Orange" || other.tag == "Green")
         {
             Destroy(other.gameObject);
         }
