@@ -11,7 +11,9 @@ public class LevelsManager : MonoBehaviour
 
     
     public GameObject cheatSheet;
-    public GameObject restart;
+    //public GameObject restart;
+
+    //public AudioSource BGM;
 
 
     void Start()
@@ -21,12 +23,13 @@ public class LevelsManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
             instance = this; //instance == moi
             player = Instantiate(playerPrefab);
-            restart = Instantiate(restart);
+            //restart = Instantiate(restart);
             DontDestroyOnLoad(player);
 
             
             DontDestroyOnLoad(cheatSheet);
-            DontDestroyOnLoad(restart);
+            //DontDestroyOnLoad(BGM);
+            //DontDestroyOnLoad(restart);
 
         }
 

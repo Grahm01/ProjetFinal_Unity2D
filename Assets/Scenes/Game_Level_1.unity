@@ -6410,7 +6410,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6090333066487032139, guid: be5efbaaff598e4498473f92d69db898, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: be5efbaaff598e4498473f92d69db898, type: 3}
 --- !u!1001 &1607731486
 PrefabInstance:
@@ -6474,18 +6475,13 @@ PrefabInstance:
     - target: {fileID: 9180430997784826607, guid: aacd990b724bb054b8c73649e6356e4e, type: 3}
       propertyPath: animator
       value: 
-      objectReference: {fileID: 1617257733}
+      objectReference: {fileID: 0}
     - target: {fileID: 9180430997784826607, guid: aacd990b724bb054b8c73649e6356e4e, type: 3}
       propertyPath: popUpBox
       value: 
       objectReference: {fileID: 1677166051}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aacd990b724bb054b8c73649e6356e4e, type: 3}
---- !u!95 &1617257733 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 8058998278504980, guid: e0f61fb624950714bbd9a704030c0430, type: 3}
-  m_PrefabInstance: {fileID: 2091968728}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1617503966
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7364,6 +7360,10 @@ PrefabInstance:
     - target: {fileID: 8058997263103058, guid: e0f61fb624950714bbd9a704030c0430, type: 3}
       propertyPath: m_Name
       value: CheatSheet_retest
+      objectReference: {fileID: 0}
+    - target: {fileID: 8058997263103058, guid: e0f61fb624950714bbd9a704030c0430, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0f61fb624950714bbd9a704030c0430, type: 3}

@@ -15,9 +15,9 @@ public class ColorChange : MonoBehaviour
     public bool alreadyChange = false;
 
     public UnityEvent whenEnter;
-    public UnityEvent whenEnterRestart;
+    //public UnityEvent whenEnterRestart;
 
-    private Animator restartAnimator;
+    //private Animator restartAnimator;
 
     protected PlayerControls playerControls;
 
@@ -27,7 +27,7 @@ public class ColorChange : MonoBehaviour
     {
         DefaultColor();
 
-        restartAnimator = GameObject.FindGameObjectWithTag("Restart").GetComponent<Animator>();
+        //restartAnimator = GameObject.FindGameObjectWithTag("Restart").GetComponent<Animator>();
 
     }
 
@@ -52,7 +52,7 @@ public class ColorChange : MonoBehaviour
     {
         if (playerControls.Player.Restart.triggered)
         {
-            Debug.Log("OK Restartr");
+            Debug.Log("OK Restart");
             Restart();
             DefaultColor();
         }
@@ -84,17 +84,17 @@ public class ColorChange : MonoBehaviour
 
         switch (tag)
         {
-            case "Restart":
+            //case "Restart":
 
-                if (colorState == ColorStatus.orange || colorState == ColorStatus.green || colorState == ColorStatus.purple || colorState == ColorStatus.blue || colorState == ColorStatus.red || colorState == ColorStatus.yellow || colorState == ColorStatus.gray)
-                {
-                    Debug.Log("Restart");
-                    whenEnterRestart?.Invoke();                    
-                    colorState = ColorStatus.gray;
-                    restartAnimator.SetBool("open", false);
-                }
+            //    if (colorState == ColorStatus.orange || colorState == ColorStatus.green || colorState == ColorStatus.purple || colorState == ColorStatus.blue || colorState == ColorStatus.red || colorState == ColorStatus.yellow || colorState == ColorStatus.gray)
+            //    {
+            //        Debug.Log("Restart");
+            //        whenEnterRestart?.Invoke();                    
+            //        colorState = ColorStatus.gray;
+            //        restartAnimator.SetBool("open", false);
+            //    }
 
-                break;
+                //break;
 
             case "Blue":
 
@@ -201,12 +201,12 @@ public class ColorChange : MonoBehaviour
                         colorState = ColorStatus.gray;
 
                     }
-                    else
-                    {
-                        if (colorState != ColorStatus.gray)
-                        restartAnimator.SetBool("open", true);
-                        //Debug.Log("Wrong color");
-                    }
+                    //else
+                    //{
+                    //    if (colorState != ColorStatus.gray)
+                    //    restartAnimator.SetBool("open", true);
+                    //    //Debug.Log("Wrong color");
+                    //}
 
                 }
                 break;
@@ -219,12 +219,12 @@ public class ColorChange : MonoBehaviour
                         colorState = ColorStatus.gray;
 
                     }
-                    else
-                    {
-                        if (colorState != ColorStatus.gray)
-                            restartAnimator.SetBool("open", true);
-                        //Debug.Log("Wrong color");
-                    }
+                    //else
+                    //{
+                    //    if (colorState != ColorStatus.gray)
+                    //        //restartAnimator.SetBool("open", true);
+                    //    //Debug.Log("Wrong color");
+                    //}
 
                 }
                 break;
@@ -237,12 +237,12 @@ public class ColorChange : MonoBehaviour
                         colorState = ColorStatus.gray;
 
                     }
-                    else
-                    {
-                        if (colorState != ColorStatus.gray)
-                            restartAnimator.SetBool("open", true);
-                        //Debug.Log("Wrong color");
-                    }
+                    //else
+                    //{
+                    //    if (colorState != ColorStatus.gray)
+                    //        //restartAnimator.SetBool("open", true);
+                    //    //Debug.Log("Wrong color");
+                    //}
 
                 }
                 break;
@@ -256,12 +256,12 @@ public class ColorChange : MonoBehaviour
                         colorState = ColorStatus.gray;
 
                     }
-                    else
-                    {
-                        if (colorState != ColorStatus.gray)
-                            restartAnimator.SetBool("open", true);
-                        //Debug.Log("Wrong color");
-                    }
+                    //else
+                    //{
+                    //    if (colorState != ColorStatus.gray)
+                    //        //restartAnimator.SetBool("open", true);
+                    //    //Debug.Log("Wrong color");
+                    //}
 
                 }
                 break;
@@ -274,12 +274,12 @@ public class ColorChange : MonoBehaviour
                         //colorState = ColorStatus.gray;
 
                     }
-                    else
-                    {
-                        if (colorState != ColorStatus.gray)
-                            restartAnimator.SetBool("open", true);
-                        //Debug.Log("Wrong color");
-                    }
+                    //else
+                    //{
+                    //    if (colorState != ColorStatus.gray)
+                    //        //restartAnimator.SetBool("open", true);
+                    //    //Debug.Log("Wrong color");
+                    //}
 
                 }
                 break;
@@ -292,12 +292,12 @@ public class ColorChange : MonoBehaviour
                         colorState = ColorStatus.gray;
 
                     }
-                    else
-                    {
-                        if (colorState != ColorStatus.gray)
-                            restartAnimator.SetBool("open", true);
-                        //Debug.Log("Wrong color");
-                    }
+                    //else
+                    //{
+                    //    if (colorState != ColorStatus.gray)
+                    //        //restartAnimator.SetBool("open", true);
+                    //    //Debug.Log("Wrong color");
+                    //}
 
                 }
                 break;
