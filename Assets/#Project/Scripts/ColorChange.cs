@@ -15,9 +15,6 @@ public class ColorChange : MonoBehaviour
     public bool alreadyChange = false;
 
     public UnityEvent whenEnter;
-    //public UnityEvent whenEnterRestart;
-
-    //private Animator restartAnimator;
 
     protected PlayerControls playerControls;
 
@@ -64,14 +61,11 @@ public class ColorChange : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         
 
-
-
     }
     public void DefaultColor()
     {
         colorState = ColorStatus.gray;
         spriteRenderer.sprite = spriteArray[0];
-        //vérifier comment changer le sprite à 0
 
     }
 
@@ -84,17 +78,6 @@ public class ColorChange : MonoBehaviour
 
         switch (tag)
         {
-            //case "Restart":
-
-            //    if (colorState == ColorStatus.orange || colorState == ColorStatus.green || colorState == ColorStatus.purple || colorState == ColorStatus.blue || colorState == ColorStatus.red || colorState == ColorStatus.yellow || colorState == ColorStatus.gray)
-            //    {
-            //        Debug.Log("Restart");
-            //        whenEnterRestart?.Invoke();                    
-            //        colorState = ColorStatus.gray;
-            //        restartAnimator.SetBool("open", false);
-            //    }
-
-                //break;
 
             case "Blue":
 
@@ -102,27 +85,19 @@ public class ColorChange : MonoBehaviour
                 {
                     colorState = ColorStatus.blue;
 
-                    
-                    //Debug.Log("Blue tru");
-
                 }
                 else if (colorState == ColorStatus.red)
                 {
                     colorState = ColorStatus.purple;
 
-                    //Debug.Log("red + blue true");
-
                 }
                 else if (colorState == ColorStatus.yellow)
                 {
                     colorState = ColorStatus.green;
-
-                    //Debug.Log("yellow + blue true");
                 }
                 else
                 {
                     colorState = ColorStatus.blue;
-
                 }
                 
                 break;
@@ -132,26 +107,19 @@ public class ColorChange : MonoBehaviour
                 {
                     colorState = ColorStatus.red;
 
-
-                    //Debug.Log("red true");
                 }
                 else if (colorState == ColorStatus.blue)
                 {
                     colorState = ColorStatus.purple;
 
-                    //Debug.Log("blue + red true");
-
                 }
                 else if (colorState == ColorStatus.yellow)
                 {
                     colorState = ColorStatus.orange;
-
-                    //Debug.Log("yellow + red true");
                 }
                 else
                 {
                     colorState = ColorStatus.red;
-
                 }
                 
                 break;
@@ -167,14 +135,12 @@ public class ColorChange : MonoBehaviour
                 {
                     colorState = ColorStatus.green;
 
-                   // Debug.Log("blue + yellow true");
 
                 }
                 else if (colorState == ColorStatus.red)
                 {
                     colorState = ColorStatus.orange;
 
-                    //Debug.Log("red + yellow true");
                 }
                 else
                 {
@@ -187,7 +153,6 @@ public class ColorChange : MonoBehaviour
                 if (colorState == ColorStatus.orange || colorState == ColorStatus.green || colorState == ColorStatus.purple || colorState == ColorStatus.gray || colorState == ColorStatus.blue || colorState == ColorStatus.red)
                 {
                     colorState = ColorStatus.purple;
-
                 }
 
                 break;
@@ -196,17 +161,10 @@ public class ColorChange : MonoBehaviour
                 {
                     if (colorState == ColorStatus.green)
                     {
-                        //Debug.Log("NICE Green");
                         whenEnter?.Invoke();
                         colorState = ColorStatus.gray;
 
                     }
-                    //else
-                    //{
-                    //    if (colorState != ColorStatus.gray)
-                    //    restartAnimator.SetBool("open", true);
-                    //    //Debug.Log("Wrong color");
-                    //}
 
                 }
                 break;
@@ -214,17 +172,11 @@ public class ColorChange : MonoBehaviour
                 {
                     if (colorState == ColorStatus.orange)
                     {
-                        //Debug.Log("NICE Orange");
                         whenEnter?.Invoke();
                         colorState = ColorStatus.gray;
 
                     }
-                    //else
-                    //{
-                    //    if (colorState != ColorStatus.gray)
-                    //        //restartAnimator.SetBool("open", true);
-                    //    //Debug.Log("Wrong color");
-                    //}
+
 
                 }
                 break;
@@ -232,17 +184,11 @@ public class ColorChange : MonoBehaviour
                 {
                     if (colorState == ColorStatus.purple)
                     {
-                        //Debug.Log("NICE Purple");
+
                         whenEnter?.Invoke();
                         colorState = ColorStatus.gray;
 
                     }
-                    //else
-                    //{
-                    //    if (colorState != ColorStatus.gray)
-                    //        //restartAnimator.SetBool("open", true);
-                    //    //Debug.Log("Wrong color");
-                    //}
 
                 }
                 break;
@@ -251,17 +197,11 @@ public class ColorChange : MonoBehaviour
                 {
                     if (colorState == ColorStatus.blue)
                     {
-                        //Debug.Log("NICE Blue Portal!");
                         whenEnter?.Invoke();
                         colorState = ColorStatus.gray;
 
                     }
-                    //else
-                    //{
-                    //    if (colorState != ColorStatus.gray)
-                    //        //restartAnimator.SetBool("open", true);
-                    //    //Debug.Log("Wrong color");
-                    //}
+
 
                 }
                 break;
@@ -269,17 +209,10 @@ public class ColorChange : MonoBehaviour
                 {
                     if (colorState == ColorStatus.red)
                     {
-                        //Debug.Log("NICE Red Portal!");
-                        whenEnter?.Invoke();
-                        //colorState = ColorStatus.gray;
 
+                        whenEnter?.Invoke();
                     }
-                    //else
-                    //{
-                    //    if (colorState != ColorStatus.gray)
-                    //        //restartAnimator.SetBool("open", true);
-                    //    //Debug.Log("Wrong color");
-                    //}
+
 
                 }
                 break;
@@ -287,21 +220,13 @@ public class ColorChange : MonoBehaviour
                 {
                     if (colorState == ColorStatus.yellow)
                     {
-                        //Debug.Log("NICE Yellow Portal!");
                         whenEnter?.Invoke();
                         colorState = ColorStatus.gray;
 
                     }
-                    //else
-                    //{
-                    //    if (colorState != ColorStatus.gray)
-                    //        //restartAnimator.SetBool("open", true);
-                    //    //Debug.Log("Wrong color");
-                    //}
 
                 }
                 break;
-
 
 
         }
